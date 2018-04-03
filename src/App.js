@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Router from './Router';
+import './config/ReactotronConfig';
+import React from 'react'; // eslint-disable-line import/first
+import { Provider } from 'react-redux'; // eslint-disable-line import/first
+import Routes from './navigation';
+import store from './store';
 
-export default class App extends Component {
-  render() {
-    return <Router />;
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <Routes />
+  </Provider>
+);
+
+export default App;
